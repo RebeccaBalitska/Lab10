@@ -1,0 +1,23 @@
+class Vector:
+    vect_cords = []
+    len_vect = 0
+
+    def add_elements(self, *args):
+        for i in args:
+            self.vect_cords.append(i)
+            self.len_vect += 1
+
+    def show_elements(self):
+        print(" ".join(map(str, self.vect_cords)))
+
+    def length(self):
+        summ = 0
+        for el in self.vect_cords:
+            summ += el ** 2
+        return summ
+
+    def rationing(self):
+        vlen = self.length()
+        for i in self.vect_cords:
+            self.vect_cords[self.vect_cords.index(i)] = i / vlen
+        return self.vect_cords
